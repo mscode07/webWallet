@@ -100,7 +100,6 @@ export default function Home() {
                 </DialogHeader>
               </DialogContent>
             </Dialog> */}
-
                 <Button
                   variant={"outline"}
                   className="flex items-center gap-2 hover:cursor-pointer"
