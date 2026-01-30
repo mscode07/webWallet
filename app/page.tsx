@@ -1,21 +1,14 @@
 "use client";
+import { MnomicKeyInput } from "@/app/components/MnomicKeyInput";
 import { ThemeProvider } from "@/app/components/theme-provider";
 import { Button } from "@/components/ui/button";
-import { Coins, Moon, Sun, Wallet } from "lucide-react";
+import { Moon, Sun, Wallet } from "lucide-react";
 import { useTheme } from "next-themes";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { SolanaWalletWallet } from "@/app/components/SolanaWallet";
 import { useState } from "react";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
+  const [pathTypes, setPathTypes] = useState("");
   const [solanaWallet, setSolanaWallet] = useState(false);
   const [ethWallet, setEthWallet] = useState(false);
   return (
@@ -51,7 +44,7 @@ export default function Home() {
           {solanaWallet || ethWallet ? (
             <>
               <div className="flex items-center justify-center mt-5">
-                <SolanaWalletWallet />
+                <MnomicKeyInput pathTypes={pathTypes} />
               </div>
             </>
           ) : (
@@ -72,6 +65,7 @@ export default function Home() {
                   onClick={(e) => {
                     e.preventDefault();
                     setSolanaWallet(true);
+                    setPathTypes("501");
                   }}
                   className="flex items-center gap-2 hover:cursor-pointer"
                 >

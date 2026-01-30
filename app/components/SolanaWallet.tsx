@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export const SolanaWalletWallet = () => {
+  const createSolanaWallet = () => {};
   const [isGenerated, setIsGenerated] = useState(false);
   return (
     <>
@@ -65,7 +66,9 @@ export const SolanaWalletWallet = () => {
             <div className="flex justify-between items-center mt-5 border border-gray-900 p-2">
               <p>Sonala Wallet</p>
               <div className="gap-2">
-                <Button className="text-xs">+ Add Wallet</Button>
+                <Button className="text-xs" onClick={createSolanaWallet}>
+                  + Add Wallet
+                </Button>
                 <Button className="text-xs" variant={"destructive"}>
                   Delete
                 </Button>
